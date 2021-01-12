@@ -2,22 +2,22 @@ import PropTypes from 'prop-types'
 import Statistic from './Statistic'
 import s from './Statistics.module.css'
 
-const Statistics = ({stats}) => {
+const Statistics = ({title, stats}) => {
     return (
-        <section className={s.statistics}>
-            <h2 className={s.title}>Upload stats</h2>
+      <section className={s.statistics}>
+        
+         {title && <h2 className={s.title}>{title}</h2>}
             
-            <ul className={s.list}>
-                {stats.map(stat => (<li key={stat.id}  className={s.item}>
-                    <Statistic
+        <ul className={s.list}>
+          {stats.map(stat => (<li
+            key={stat.id}
+            className={s.item}>
+            <Statistic
                 label={stat.label}
-                percentage={stat.percentage}
-            />
+                percentage={stat.percentage}/>
                 </li>))}
-            </ul>
-            
-  
-</section>
+        </ul>
+      </section>
     )
 };
 

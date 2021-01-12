@@ -3,9 +3,9 @@ import s from './Statistics.module.css'
 
 const Statistic = ({ label, percentage}) => {
     return (
-        <>
-             <span className={s.label}>{label}</span>
-             <span className={s.percentage}>{percentage}</span>
+      <>
+         <span className={s.label}>{label}</span>
+         <span className={s.percentage}>{percentage}</span>
       </>
     
     )

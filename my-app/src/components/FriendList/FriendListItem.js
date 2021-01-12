@@ -3,16 +3,18 @@ import s from './FriendList.module.css'
 
 const FriendListItem = ({avatar, name, isOnline}) => {
     return (
-        <>
-            <span className={s.status} style={{ backgroundColor: isOnline ? 'green' : 'red' }}>{isOnline}</span>
-             <img className={s.avatar} src={avatar} alt="" width="48" />
+    <>
+        <li className={s.item}>
+            <span className={s.status} style={{ backgroundColor: isOnline ? 'green' : 'red' }}></span>
+            <img className={s.avatar} src={avatar} alt={name} width="48" />
             <p className={s.name}>{name}</p>
-        </>
+        </li>
+    </>
     )
 }
 
 FriendListItem.propTypes = {
-  avatar: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     isOnline: PropTypes.bool.isRequired,
 };
